@@ -13,6 +13,7 @@ gem 'bcrypt-ruby'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
+gem 'voteable-tj', '=0.0.2'
 
 group :doc do
   gem 'sdoc', require: false

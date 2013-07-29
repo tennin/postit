@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  include VoteableTj
+
   has_many :posts
   has_many :comments
   has_many :votes
@@ -15,9 +17,7 @@ class User < ActiveRecord::Base
 
   after_validation :generate_slug
 
-  def already_voted_on?(obj)
-    self.votes.where(voteable: obj).size > 0
-  end
+
 
   def generate_slug
     self.slug = self.username.gsub(' ', '-').downcase
